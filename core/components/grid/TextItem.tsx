@@ -7,14 +7,14 @@ interface ITextItem {
 
 const TextItem: React.FC<ITextItem> = ({ width, height }) => {
   return (
-    <div className={`${width} ${height} text-white font-capriola`}>
-      <div className="w-full h-[50%] ">
-        <p className="text-left text-5xl p-10 leading-tight">
+    <div className={`${width}  text-white border border-blurrRed font-capriola pt-[100%] relative`}>
+      <div className="w-full h-[50%] inset-0 absolute">
+        <p className="text-left text-4xl p-10 leading-tight">
           MOST RECENT SALES OF FIGHTING GEAR
         </p>
       </div>
-      <div className="text-right flex items-end justify-end w-full h-[50%] ">
-        <p className="p-8 w-[55%]">
+      <div className="text-right text-sm flex items-end justify-end w-full h-[50%] inset-x-0 bottom-2 absolute">
+        <p className="p-8 w-[55%] ">
           Your go-to destination for the newest sales on high-quality fighting
           sports equipment. We offer a wide range of products from top brands!
         </p>

@@ -12,8 +12,8 @@ const test = {
 };
 const Pregrid = () => {
   return (
-    <div className="flex h-screen w-screen">
-      <section className="flex-col w-[34vw] h-full ">
+    <section className="flex h-screen w-screen">
+      <section className="flex-col w-[35vw] border-0.5 border-blurrRed ">
         <TextItem width="w-full" height="h-[50vh]" />
         <Article
           name={test.name}
@@ -21,12 +21,18 @@ const Pregrid = () => {
           specialPrice={test.specialPrice}
           oldPrice={test.oldPrice}
           width="w-full"
-          height="h-[50%]"
         />
-        <div className="border h-[50vh] w-full"></div>
       </section>
-      <div className="border border-white h-screen w-[64wv]"></div>
-    </div>
+      <section className="w-[70vw] h-full">
+        <Article
+          name={test.name}
+          imageScr={test.imageScr}
+          specialPrice={test.specialPrice}
+          oldPrice={test.oldPrice}
+          width="w-full"
+        />
+      </section>
+    </section>
   );
 };
 

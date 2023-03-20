@@ -19,20 +19,24 @@ const Article: React.FC<IArticle> = ({
   height,
 }) => {
   return (
-    <div className={`${width} ${height} border border-white`}>
-      <div className="w-full h-[80%] border-b border-white ">
+    <div
+      className={`${width}  border-0.5 border-blurrRed text-white pt-[100%] relative font-capriola`}
+    >
+      <div className="w-full h-full absolute inset-0 ">
         <Image
           src={imageScr[0]}
           alt={"Test Image"}
           width={500}
-          height={400}
-          sizes="height:80%"
+          height={500}
+          sizes="height:100%"
           className="w-full h-full"
         />
       </div>
-      <h3>{name}</h3>
-      <p>{specialPrice}</p>
-      <p>{oldPrice}</p>
+      <div className="absolute inset-x-0 bottom-0 ">
+        <h3 className="text-xl">{name}</h3>
+        <p className="text-xl">{specialPrice}</p>
+        <p className="text-xl">{oldPrice}</p>
+      </div>
     </div>
   );
 };
