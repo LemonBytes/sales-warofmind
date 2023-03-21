@@ -1,14 +1,14 @@
 module.exports = {
   content: [
-    './pages/**/*.{js,ts,jsx,tsx, html}',
-    './core/components/**/*.{js,ts,jsx,tsx, html}',
+    "./pages/**/*.{js,ts,jsx,tsx, html}",
+    "./core/components/**/*.{js,ts,jsx,tsx, html}",
   ],
   theme: {
     screens: {
-      sm: '640px',
-      md: '768px',
-      lg: '1024px',
-      xl: '1280px',
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
     },
     colors: {
       black: `rgb(${26}, ${25}, ${25})`,
@@ -16,19 +16,29 @@ module.exports = {
       blurrRed: `rgb(${200}, ${4}, ${34}, ${0.8})`,
       menuBlack: `rgb(${0}, ${0}, ${0}, ${0.8})`,
     },
-      borderWidth: {
-      DEFAULT: '1px',
-      '0.5': '0.5px',
-      '2': '2px',
-      '3': '3px',
-      '4': '4px',
-      '6': '6px',
-      '8': '8px',
+    borderWidth: {
+      DEFAULT: "1px",
+      0.5: "0.5px",
+      2: "2px",
+      3: "3px",
+      4: "4px",
+      6: "6px",
+      8: "8px",
     },
+    outlineWidth: {
+      DEFAULT: "1px",
+      0.5: "0.5px",
+      2: "2px",
+      3: "3px",
+      4: "4px",
+      6: "6px",
+      8: "8px",
+    },
+
     extend: {
       fontFamily: {
-        naruto: ['naruto'],
-        capriola: ['capriola'],
+        naruto: ["naruto"],
+        capriola: ["capriola"],
       },
       fontSize: new Array(201)
         .fill()
@@ -45,23 +55,21 @@ module.exports = {
           return acc;
         }, {}),
       backgroundImage: {
-
         brush: "url('../public/static/assets/images/brush.webp')",
-
       },
       backgroundPosition: {
-        topBar: '-150px',
-        bottBar: '-70px',
+        topBar: "-150px",
+        bottBar: "-70px",
       },
       screens: {
-        smallPhone: { raw: '(max-height: 670px)' },
+        smallPhone: { raw: "(max-height: 670px)" },
       },
     },
   },
-  mode: 'jit',
+  mode: "jit",
   content: [
-    './pages/**/*.{js,ts,jsx,tsx}',
-    './core/components/**/*.{js,ts,jsx,tsx,}',
+    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./core/components/**/*.{js,ts,jsx,tsx,}",
   ],
   /* plugins: [[require('prettier-plugin-tailwindcss')]], */
 };

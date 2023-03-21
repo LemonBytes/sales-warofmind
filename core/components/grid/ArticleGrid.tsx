@@ -16,6 +16,7 @@ const ArticleGrid: React.FC<IArticleGrid> = ({ articles }) => {
             imageScr={article.imageScr}
             specialPrice={article.specialPrice}
             oldPrice={article.oldPrice}
+            articleSrc={article.articleSrc}
           />
         );
       })}

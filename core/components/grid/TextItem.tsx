@@ -7,7 +7,9 @@ interface ITextItem {
 
 const TextItem: React.FC<ITextItem> = ({ width, height }) => {
   return (
-    <div className={`${width}  text-white border border-blurrRed font-capriola pt-[100%] relative`}>
+    <div
+      className={`${width}  text-white outline- outline-blurrRed font-capriola pt-[85%] relative`}
+    >
       <div className="w-full h-[50%] inset-0 absolute">
         <p className="text-left text-4xl p-10 leading-tight">
           MOST RECENT SALES OF FIGHTING GEAR
