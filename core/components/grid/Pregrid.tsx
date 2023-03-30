@@ -13,8 +13,8 @@ const test = {
 };
 const Pregrid = () => {
   return (
-    <section className="flex h-screen w-screen m-0 p-0">
-      <section className="flex-col w-[35vw] ">
+    <section className="h-screen w-screen m-0 p-0 grid grid-cols-[35vw_minmax(70vw,_1fr)_100px]">
+      <section className="w-auto">
         <TextItem width="w-full" height="h-[50vh]" />
         <Article
           name={test.name}
@@ -25,7 +25,7 @@ const Pregrid = () => {
           articleSrc={test.articleSrc}
         />
       </section>
-      <section className="w-[70vw] h-full">
+      <section className="h-screen w-auto">
         <Article
           name={test.name}
           imageScr={test.imageScr}
