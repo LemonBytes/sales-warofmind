@@ -1,22 +1,23 @@
 import React from "react";
 
 interface ITextItem {
-  width: string;
-  height: string;
+  width?: string;
+  rowSpan?: string;
+  colEnd?: string;
 }
 
-const TextItem: React.FC<ITextItem> = ({ width, height }) => {
+const TextItem: React.FC<ITextItem> = ({ width, rowSpan, colEnd }) => {
   return (
     <div
-      className={`${width}  text-white outline outline-blurrRed font-capriola pt-[85%] relative`}
+      className={`${rowSpan} ${colEnd} h-full text-white font-capriola  outline outline-blurrRed`}
     >
-      <div className="w-full h-[50%] inset-0 absolute">
-        <p className="text-left text-4xl p-10 leading-tight">
+      <div className="w-full h-[50%]">
+        <p className="text-left lg:text-4xl md:text-2xl p-10 leading-tight">
           MOST RECENT SALES OF FIGHTING GEAR
         </p>
       </div>
-      <div className="text-right text-sm flex items-end justify-end w-full h-[50%] inset-x-0 bottom-2 absolute">
-        <p className="p-8 w-[55%] ">
+      <div className="text-right lg:text-base flex  text-xs items-end justify-end w-full h-[50%]  bottom-2 ">
+        <p className="p-8 lg:w-[60%] ">
           Your go-to destination for the newest sales on high-quality fighting
           sports equipment. We offer a wide range of products from top brands!
         </p>

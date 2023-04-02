@@ -1,71 +1,29 @@
 import Head from "next/head";
-import Image from "next/image";
-import { Inter } from "next/font/google";
-import styles from "@/styles/Home.module.css";
 import Header from "../../core/components/warpper/header/Header";
 import ArticleGrid from "../../core/components/grid/ArticleGrid";
-import Pregrid from "../../core/components/grid/Pregrid";
+import productList from "../../public/static/products/productList.json";
+import { IArticle } from "../../core/components/grid/Article";
 
-const inter = Inter({ subsets: ["latin"] });
-
-const testArticles = [
-  {
-    name: "TestTest",
-    imageScr:
-      "https://fastly.picsum.photos/id/952/500/300.jpg?hmac=YgoTM__VzyTDC1kTCFxM-Bc0WseGsbdkUMBKoDbyOTc",
-    specialPrice: "25.99€",
-    oldPrice: "22.99€",
-  },
-  {
-    name: "TestTest",
-    imageScr:
-      "https://fastly.picsum.photos/id/952/500/300.jpg?hmac=YgoTM__VzyTDC1kTCFxM-Bc0WseGsbdkUMBKoDbyOTc",
-    specialPrice: "25.99€",
-    oldPrice: "22.99€",
-  },
-  {
-    name: "TestTest",
-    imageScr:
-      "https://fastly.picsum.photos/id/952/500/300.jpg?hmac=YgoTM__VzyTDC1kTCFxM-Bc0WseGsbdkUMBKoDbyOTc",
-    specialPrice: "25.99€",
-    oldPrice: "22.99€",
-  },
-  {
-    name: "TestTest",
-    imageScr:
-      "https://fastly.picsum.photos/id/952/500/300.jpg?hmac=YgoTM__VzyTDC1kTCFxM-Bc0WseGsbdkUMBKoDbyOTc",
-    specialPrice: "25.99€",
-    oldPrice: "22.99€",
-  },
-  {
-    name: "TestTest",
-    imageScr:
-      "https://fastly.picsum.photos/id/952/500/300.jpg?hmac=YgoTM__VzyTDC1kTCFxM-Bc0WseGsbdkUMBKoDbyOTc",
-    specialPrice: "25.99€",
-    oldPrice: "22.99€",
-  },
-  {
-    name: "TestTest",
-    imageScr:
-      "https://fastly.picsum.photos/id/952/500/300.jpg?hmac=YgoTM__VzyTDC1kTCFxM-Bc0WseGsbdkUMBKoDbyOTc",
-    specialPrice: "25.99€",
-    oldPrice: "22.99€",
-  },
-  {
-    name: "TestTest",
-    imageScr:
-      "https://fastly.picsum.photos/id/952/500/300.jpg?hmac=YgoTM__VzyTDC1kTCFxM-Bc0WseGsbdkUMBKoDbyOTc",
-    specialPrice: "25.99€",
-    oldPrice: "22.99€",
-  },
-  {
-    name: "TestTest",
-    imageScr:
-      "https://fastly.picsum.photos/id/952/500/300.jpg?hmac=YgoTM__VzyTDC1kTCFxM-Bc0WseGsbdkUMBKoDbyOTc",
-    specialPrice: "25.99€",
-    oldPrice: "22.99€",
-  },
-];
+//write a parse which takes the json and returns an array of IArticle
+//then you can use the array in the ArticleGrid component
+// how to parse a json file to a javascript object
+// https://stackoverflow.com/questions/20008134/how-to-parse-a-json-file-in-javascript
+const parse = (json: any) => {
+  const articles: IArticle[] = [];
+  const products = JSON.parse(JSON.stringify(json));
+  Object.entries(products).map(([key, value]) => {
+    value.map((product: any) => {
+      articles.push({
+        name: product.product_name,
+        imageScr: product.product_image,
+        articleSrc: product.product_link,
+        specialPrice: product.product_special_price,
+        oldPrice: product.product_price,
+      });
+    });
+  });
+  return articles;
+};
 
 export default function Home() {
   return (
@@ -77,8 +35,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <Pregrid />
-      {/* <ArticleGrid articles={testArticles} /> */}
+      <section className="block">
+        <ArticleGrid articles={parse(productList)} />
+      </section>
     </>
   );
 }
