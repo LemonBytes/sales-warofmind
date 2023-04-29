@@ -12,8 +12,8 @@ module.exports = {
     },
     colors: {
       black: `rgb(${26}, ${25}, ${25})`,
-      white: `#FFF6F3`,
-      blurrRed: `rgb(${200}, ${4}, ${34}, ${0.8})`,
+      white: `#404040`,
+      blurrRed: `#404040`,
       menuBlack: `rgb(${0}, ${0}, ${0}, ${0.8})`,
     },
     borderWidth: {

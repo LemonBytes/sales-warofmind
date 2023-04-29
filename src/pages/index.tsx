@@ -2,28 +2,30 @@ import Head from "next/head";
 import Header from "../../core/components/warpper/header/Header";
 import ArticleGrid from "../../core/components/grid/ArticleGrid";
 import productList from "../../public/static/products/productList.json";
-import { IArticle } from "../../core/components/grid/Article";
+import { IBrand } from "../../core/entities/brand";
+import { IArticle } from "../../core/entities/article";
 
 //write a parse which takes the json and returns an array of IArticle
 //then you can use the array in the ArticleGrid component
 // how to parse a json file to a javascript object
 // https://stackoverflow.com/questions/20008134/how-to-parse-a-json-file-in-javascript
-const parse = (json: any) => {
-  const articles: IArticle[] = [];
-  const products = JSON.parse(JSON.stringify(json));
-  Object.entries(products).map(([key, value]) => {
-    value.map((product: any) => {
-      articles.push({
-        name: product.product_name,
-        imageScr: product.product_image,
-        articleSrc: product.product_link,
-        specialPrice: product.product_special_price,
-        oldPrice: product.product_price,
-      });
-    });
-  });
-  return articles;
-};
+const parse = (json: any):IBrand => {
+  const brands: IBrand = {}
+  Object.keys(json).forEach((brandName: string) => {
+    console.log(brandName)
+    brands[brandName] = json[brandName].map((article: IArticle) => {
+      return {
+        name: article.product_name,
+        imageScr: article.product_image,
+        articleSrc: article.product_link,
+        specialPrice: article.product_special_price,
+        oldPrice: article.product_price,
+      }
+    })
+  })
+  return brands
+
+}; 
 
 export default function Home() {
   return (
@@ -36,7 +38,7 @@ export default function Home() {
       </Head>
       <Header />
       <section className="block">
-        <ArticleGrid articles={parse(productList)} />
+        <ArticleGrid products={parse(productList)} />
       </section>
     </>
   );

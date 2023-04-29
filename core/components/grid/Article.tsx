@@ -1,17 +1,9 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { IArticle } from "../../entities/article";
 
-export interface IArticle {
-  name: string;
-  imageScr: string;
-  articleSrc: string;
-  specialPrice: string;
-  oldPrice: string;
-  width?: string;
-  rowSpan?: string;
-  colEnd?: string;
-}
+
 
 const Article: React.FC<IArticle> = ({
   name,
@@ -22,7 +14,7 @@ const Article: React.FC<IArticle> = ({
   rowSpan,
   colEnd,
 }) => {
-  console.log(articleSrc);
+  
   return (
     <article
       className={`${rowSpan} ${colEnd} overflow-hidden w-full text-white font-capriola flex flex-col justify-evenly items-center box-border overflow-hidden relative outline outline-blurrRed`}

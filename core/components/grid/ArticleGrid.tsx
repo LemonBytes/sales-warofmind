@@ -1,63 +1,42 @@
 import React from "react";
-import Article, { IArticle } from "./Article";
+import Article from "./Article";
 import TextItem from "./TextItem";
+import { IBrand } from "../../entities/brand";
+import { IArticle } from "../../entities/article";
 
-export interface IArticleGrid {
-  articles: IArticle[];
+export interface IProductGrid {
+  products: IBrand
 }
 
-const ArticleGrid: React.FC<IArticleGrid> = ({ articles }) => {
+const ArticleGrid: React.FC<IProductGrid> = ({ products }) => {
   return (
-    <section className="m-0 p-0 grid md:grid-cols-5 lg:grid-cols-5 grid-cols-2 border-box">
-      <TextItem width="w-full" rowSpan={"row-span-1"} colEnd={"col-span-2"} />
-      <Article
-        name={articles[1].name}
-        imageScr={articles[1].imageScr}
-        specialPrice={articles[1].specialPrice}
-        oldPrice={articles[1].oldPrice}
-        articleSrc={articles[1].articleSrc}
-        colEnd={"col-start-1"}
-        rowSpan={"row-span-1"}
-      />
-      <Article
-        name={articles[0].name}
-        imageScr={
-          Array.isArray(articles[0].imageScr)
-            ? articles[0].imageScr[0]
-            : articles[0].imageScr
-        }
-        specialPrice={articles[0].specialPrice}
-        oldPrice={articles[0].oldPrice}
-        articleSrc={articles[0].articleSrc}
-        rowSpan={"row-span-3 row-start-1 "}
-        colEnd={"col-span-3 col-start-3"}
-      />
-
-      {articles.map((article, index) => {
+    <section>
+     
+      {Object.keys(products).map((brandName: string) => {
         return (
-          <Article
-            key={index}
-            name={article.name}
-            imageScr={
-              Array.isArray(article.imageScr)
-                ? article.imageScr[0]
-                : article.imageScr
-            }
-            specialPrice={article.specialPrice}
-            oldPrice={article.oldPrice}
-            articleSrc={article.articleSrc}
-            rowSpan={
-              index % 3 == 0
-                ? "lg:row-span-3 md:row-span-3 row-span-1"
-                : "row-span-2 lg:row-span-2 md:row-span-2 "
-            }
-            colEnd={
-              index % 3 == 0
-                ? "lg:col-span-3 md:col-span-3 col-span-2"
-                : "col-span-1 lg:col-span-2 md:col-span-2"
-            }
-          />
-        );
+          <section className="m-0 p-0 col-span-3 row-span-3 grid md:grid-cols-3 lg:grid-cols-3 grid-cols-2 border-box">
+            <h1 className="row-span-3 col-span-3 text-3xl text-center">{brandName}</h1>
+            {products[brandName].map((article: IArticle, index: number) => {
+              return (
+                <Article
+                  key={index}
+                  name={article.name}
+                  imageScr={article.imageScr}
+                  articleSrc={article.articleSrc}
+                  specialPrice={article.specialPrice}
+                  oldPrice={article.oldPrice}
+                  rowSpan={index % 3 == 0
+
+                    ? "row-span-2"
+                    : "row-span-1"}
+
+                  colEnd={index % 3 == 0
+                    ? "col-span-2"
+                    : "col-span-1"}/>
+              );
+            })}
+          </section>
+          )
       })}
     </section>
   );

@@ -1,26 +1,33 @@
-@tailwind base {}
-@tailwind components{}
-@tailwind utilities {}
+@tailwind base {
+}
+@tailwind components {
+}
+@tailwind utilities {
+}
 
 @layer base {
   @font-face {
-    font-family: 'naruto';
-    src: url('../../public/static/fonts/naruto.ttf');
+    font-family: "naruto";
+    src: url("../../public/static/fonts/naruto.ttf");
   }
   @font-face {
-    font-family: 'capriola';
-    src: url('../../public/static/fonts/Capriola.ttf');
+    font-family: "capriola";
+    src: url("../../public/static/fonts/Capriola.ttf");
   }
   body {
-    @apply bg-black;
+    background: rgb(217, 217, 217,0.6);
   }
   ::-webkit-scrollbar {
     display: none;
   }
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     box-sizing: border-box;
   }
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     margin: 0;
     padding: 0;
   }
