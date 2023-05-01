@@ -6,10 +6,10 @@ interface ITextItem {
   colEnd?: string;
 }
 
-const TextItem: React.FC<ITextItem> = ({ width, rowSpan, colEnd }) => {
+const TextItem: React.FC<ITextItem> = ({ rowSpan, colEnd }) => {
   return (
     <div
-      className={`${rowSpan} ${colEnd} h-full text-white font-capriola  outline outline-blurrRed`}
+      className={`${rowSpan} ${colEnd} h-full text-black font-capriola  outline outline-blurrRed`}
     >
       <div className="w-full h-[50%]">
         <p className="text-left lg:text-4xl md:text-2xl p-10 leading-tight">
