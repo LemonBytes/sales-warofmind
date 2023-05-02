@@ -11,7 +11,7 @@ module.exports = {
       xl: "1280px",
     },
     colors: {
-      smokeWhite: `rgb(${26}, ${25}, ${25})`,
+      venumWhite: `rgb(${217}, ${217}, ${217}, ${0.6})`,
       white: `#ffffff`,
       black: `#404040`,
       menuBlack: `rgb(${0}, ${0}, ${0}, ${0.8})`,

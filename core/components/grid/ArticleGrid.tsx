@@ -8,14 +8,26 @@ export interface IProductGrid {
   products: IBrand;
 }
 
+const mapBackgroundColor = (brandName: string) => {
+  return brandName === "venum" ? "bg-venumWhite" : "bg-white";
+};
+
 const ArticleGrid: React.FC<IProductGrid> = ({ products }) => {
   return (
     <section>
-      {Object.keys(products).map((brandName: string) => {
+      {Object.keys(products).map((brandName: string, index: number) => {
         return (
           <>
-            <section className="m-0 p-0  grid md:grid-cols-4 lg:grid-cols-4 grid-cols-2 border-box">
-              <h1 className="row-span-4 col-span-4 w-full text-black text-4xl font-capriola uppercase text-center h-40 outline flex items-center justify-center">
+            <section
+              className={`m-0 p-0  grid md:grid-cols-4 lg:grid-cols-4 grid-cols-2 border-box ${mapBackgroundColor(
+                brandName
+              )}`}
+            >
+              <h1
+                className={`col-span-4 w-full text-black text-5xl font-capriola px-20 uppercase text-center border border-black h-40 flex items-center ${
+                  index % 2 == 0 ? "justify-start" : "justify-end"
+                }`}
+              >
                 {brandName}
               </h1>
               <TextItem colEnd="col-span-2" rowSpan="row-span-1" />

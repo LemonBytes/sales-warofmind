@@ -14,7 +14,7 @@ const Article: React.FC<IArticle> = ({
 }) => {
   return (
     <article
-      className={`${rowSpan} ${colEnd} overflow-hidden w-full text-black font-capriola flex flex-col  items-center box-border overflow-hidden relative outline outline-smokeWhite`}
+      className={`${rowSpan} ${colEnd} overflow-hidden w-full text-black font-capriola flex flex-col  items-center outline overflow-hidden relative  `}
     >
       <Link href={articleSrc} target="_blank">
         <div className="w-full h-full border-box overflow-hidden">
@@ -27,10 +27,10 @@ const Article: React.FC<IArticle> = ({
           />
         </div>
       </Link>
-      <div className="flex justify-evenly items-center w-full min-h-[120px] max-h-[170px] p-5">
-        <h6 className="py-2 px-1 text-black text xl:text-base lg:text-md md:text-xs w-[50%]">
+      <div className="flex justify-evenly items-center min-h-[100px] max-h-[150px] p-5">
+        <h5 className="py-2 px-1 text-black text xl:text-base lg:text-md md:text-xs w-[50%] truncate">
           {name}
-        </h6>
+        </h5>
         <div className="flex-col items-center">
           <p className="xl:text-xl lg:text-base md:text-sm p-3 md:text-xs underline text-black">
             {specialPrice}
@@ -42,7 +42,7 @@ const Article: React.FC<IArticle> = ({
         <a
           href={articleSrc}
           target="_blank"
-          className="xl:sm p-2 lg:text-sm  md:text-xs text-black"
+          className="xl:sm p-2 lg:text-sm  md:text-xs text-black outline"
         >
           BUY NOW
         </a>

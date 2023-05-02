@@ -4,15 +4,16 @@ import ArticleGrid from "../../core/components/grid/ArticleGrid";
 import productList from "../../public/static/products/productList.json";
 import { IBrand } from "../../core/entities/brand";
 import { IArticle } from "../../core/entities/article";
+import Footer from "../../core/components/warpper/footer/Footer";
 
 //write a parse which takes the json and returns an array of IArticle
 //then you can use the array in the ArticleGrid component
 // how to parse a json file to a javascript object
 // https://stackoverflow.com/questions/20008134/how-to-parse-a-json-file-in-javascript
-const parse = (json: any):IBrand => {
-  const brands: IBrand = {}
+const parse = (json: any): IBrand => {
+  const brands: IBrand = {};
   Object.keys(json).forEach((brandName: string) => {
-    console.log(brandName)
+    console.log(brandName);
     brands[brandName] = json[brandName].map((article: IArticle) => {
       return {
         name: article.product_name,
@@ -20,12 +21,11 @@ const parse = (json: any):IBrand => {
         articleSrc: article.product_link,
         specialPrice: article.product_special_price,
         oldPrice: article.product_price,
-      }
-    })
-  })
-  return brands
-
-}; 
+      };
+    });
+  });
+  return brands;
+};
 
 export default function Home() {
   return (
@@ -40,6 +40,7 @@ export default function Home() {
       <section className="block">
         <ArticleGrid products={parse(productList)} />
       </section>
+      <Footer />
     </>
   );
 }

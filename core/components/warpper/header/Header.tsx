@@ -5,9 +5,11 @@ import MenuButton from "./MenuButton";
 
 const Header = () => {
   return (
-    <header className="md:h-32 w-screen sticky top-0 flex items-center justify-between z-10 bg-black">
+    <header className="md:h-32 w-screen sticky -top-1 flex items-center justify-around z-10 bg-white">
       <MenuButton />
+      <div className="border border-1 w-[30%]"></div>
       <Logo />
+      <div className="border border-1 w-[30%]"></div>
       <Ippo />
     </header>
   );

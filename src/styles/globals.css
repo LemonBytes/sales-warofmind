@@ -14,9 +14,6 @@
     font-family: "capriola";
     src: url("../../public/static/fonts/Capriola.ttf");
   }
-  body {
-    background: rgb(217, 217, 217,0.6);
-  }
   ::-webkit-scrollbar {
     display: none;
   }
