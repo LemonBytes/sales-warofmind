@@ -27,8 +27,8 @@ const Article: React.FC<IArticle> = ({
           />
         </div>
       </Link>
-      <div className="flex justify-around items-center min-h-[20%]  p-5">
-        <h5 className="py-2 px-1 text-black text xl:text-base lg:text-md md:text-xs w-[50%] text-ellipsis">
+      <div className="flex justify-around items-center min-h-[20%] p-5 w-full">
+        <h5 className="py-2 px-1 text-black text xl:text-base lg:text-md md:text-xs w-[60%] text-ellipsis">
           {name}
         </h5>
         <div className="flex-col items-center">

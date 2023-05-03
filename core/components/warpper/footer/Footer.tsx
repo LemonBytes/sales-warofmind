@@ -3,7 +3,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="sticky bottom-0">
+    <footer className="relative -bottom-1">
       <Link href={"/"}>LEGAL NOTICE</Link>
     </footer>
   );
