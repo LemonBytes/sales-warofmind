@@ -1,15 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import logo from "../../../../public/static/images/logo.png";
+import logo from "../../../../public/static/images/logo.jpg";
 const Logo = () => {
   return (
-    <Image
-      className="outline outline-black p-8"
-      src={logo}
-      alt={""}
-      width={130}
-      height={130}
-    />
+    <Image className="p-10" src={logo} alt={""} width={130} height={130} />
   );
 };
 
