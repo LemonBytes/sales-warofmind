@@ -12,7 +12,7 @@ const TextItem: React.FC<ITextItem> = ({ rowSpan, colEnd }) => {
       className={`${rowSpan} ${colEnd} h-full text-black font-capriola  outline outline-blurrRed`}
     >
       <div className="w-full h-[50%]">
-        <p className="text-left lg:text-4xl md:text-2xl p-10 leading-tight">
+        <p className="text-left lg:text-5xl md:text-3xl text-2xl p-10 leading-tight">
           MOST RECENT SALES OF FIGHTING GEAR
         </p>
       </div>
