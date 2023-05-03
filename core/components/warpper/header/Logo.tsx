@@ -1,10 +1,9 @@
 import React from "react";
-
+import Image from "next/image";
+import logo from "../../../../public/static/images/logo.jpg";
 const Logo = () => {
   return (
-    <h2 className="font-naruto text-white xl:text-3xl md:text-2xl text border md:p-5 p-3 bg-black flex self-center p-2 ">
-      War of Mind
-    </h2>
+    <Image className="px-10" src={logo} alt={""} width={130} height={130} />
   );
 };
 
