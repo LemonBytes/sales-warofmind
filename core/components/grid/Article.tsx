@@ -32,10 +32,10 @@ const Article: React.FC<IArticle> = ({
           {name}
         </h5>
         <div className="flex-col items-center">
-          <p className="xl:text-xl lg:text-base md:text-sm text-xl p-3 underline text-black">
+          <p className="xl:text-xl lg:text-base md:text-sm text-2xl p-2 underline text-black">
             {specialPrice}
           </p>
-          <p className="xl:text-base p-1 lg:text-sm md:text-xs line-through">
+          <p className="xl:text-base lg:text-sm md:text-xs line-through">
             {oldPrice}
           </p>
         </div>

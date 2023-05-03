@@ -24,7 +24,7 @@ const ArticleGrid: React.FC<IProductGrid> = ({ products }) => {
               )}`}
             >
               <h1
-                className={`col-span-4 w-full text-black text-5xl font-capriola px-20 uppercase text-center border border-black h-40 flex items-center ${
+                className={`col-span-4 w-full text-black md:text-5xl text-3xl font-capriola px-2 md:px-20 uppercase text-center border border-black h-40 flex items-center ${
                   index % 2 == 0 ? "justify-start" : "justify-end"
                 }`}
               >
