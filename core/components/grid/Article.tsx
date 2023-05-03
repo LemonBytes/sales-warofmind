@@ -14,7 +14,7 @@ const Article: React.FC<IArticle> = ({
 }) => {
   return (
     <article
-      className={`${rowSpan} ${colEnd} overflow-hidden w-full text-black font-capriola flex flex-col  items-center outline overflow-hidden relative p-10`}
+      className={`${rowSpan} ${colEnd} overflow-hidden w-full text-black font-capriola flex flex-col  items-center outline relative p-10`}
     >
       <Link href={articleSrc} target="_blank">
         <div className="w-full h-full border-box overflow-hidden">
@@ -23,16 +23,16 @@ const Article: React.FC<IArticle> = ({
             alt={"Test Image"}
             width={1000}
             height={700}
-            className="object-fit overflow-hidden"
+            className="object-center"
           />
         </div>
       </Link>
-      <div className="flex justify-around items-center min-h-[20%] p-5 w-full">
-        <h5 className="py-2 px-1 text-black text xl:text-base lg:text-md md:text-xs w-[60%] text-ellipsis">
+      <div className="flex  justify-evenly items-center min-h-[20%] py-5 w-full flex-col md:flex-row lg:flex-row ">
+        <h5 className="py-1 px-1 text-black text xl:text-base lg:text-md md:text-xs md:text-left lg:text-left xl:text-left text-center md:w-[60%] lg:w-[60%] xl:w-[60%] text-clip text-left">
           {name}
         </h5>
         <div className="flex-col items-center">
-          <p className="xl:text-xl lg:text-base md:text-sm text-base p-3 underline text-black">
+          <p className="xl:text-xl lg:text-base md:text-sm text-xl p-3 underline text-black">
             {specialPrice}
           </p>
           <p className="xl:text-base p-1 lg:text-sm md:text-xs line-through">
@@ -42,7 +42,7 @@ const Article: React.FC<IArticle> = ({
         <a
           href={articleSrc}
           target="_blank"
-          className="xl:sm p-2 lg:text-sm  md:text-xs text-black outline"
+          className="xl:sm p-2 lg:text-sm md:text-xs text-black w-32 m-5 outline text-center border-1 border-black hover:bg-black hover:text-white transition-all duration-500 ease-in-out"
         >
           BUY NOW
         </a>
