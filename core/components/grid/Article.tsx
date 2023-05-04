@@ -14,7 +14,7 @@ const Article: React.FC<IArticle> = ({
 }) => {
   return (
     <article
-      className={`${rowSpan} ${colEnd} overflow-hidden w-full text-black font-capriola flex flex-col  items-center outline relative p-10`}
+      className={`${rowSpan} ${colEnd} overflow-hidden w-full text-black font-capriola flex flex-col  items-center outline outline-0.5 relative p-10`}
     >
       <Link href={articleSrc} target="_blank">
         <div className="w-full h-full border-box overflow-hidden">
@@ -42,7 +42,7 @@ const Article: React.FC<IArticle> = ({
         <a
           href={articleSrc}
           target="_blank"
-          className="xl:sm p-2 lg:text-sm md:text-xs text-black w-32 m-5 outline text-center border-1 border-black hover:bg-black hover:text-white transition-all duration-500 ease-in-out"
+          className="xl:sm p-2 lg:text-sm md:text-xs text-black w-32 m-5 outline outline-0.5 text-center border-1 border-black hover:bg-black hover:text-white transition-all duration-500 ease-in-out"
         >
           BUY NOW
         </a>
