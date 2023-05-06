@@ -13,7 +13,6 @@ import Footer from "../../core/components/warpper/footer/Footer";
 const parse = (json: any): IBrand => {
   const brands: IBrand = {};
   Object.keys(json).forEach((brandName: string) => {
-    console.log(brandName);
     brands[brandName] = json[brandName].map((article: IArticle) => {
       return {
         name: article.product_name,

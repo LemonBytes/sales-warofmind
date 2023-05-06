@@ -19,7 +19,7 @@ const ArticleGrid: React.FC<IProductGrid> = ({ products }) => {
         return (
           <>
             <section
-              className={`m-0 p-0  grid md:grid-cols-4 lg:grid-cols-4 grid-cols-2 border-box ${mapBackgroundColor(
+              className={`m-0 p-0 grid lg:grid-cols-4 grid-cols-2 lg:place-items-stretch place-items-center ${mapBackgroundColor(
                 brandName
               )}`}
             >
@@ -42,8 +42,8 @@ const ArticleGrid: React.FC<IProductGrid> = ({ products }) => {
                     oldPrice={article.oldPrice}
                     colEnd={
                       index % 5 == 0
-                        ? "md:col-span-2 lg:row-span-2 col-span-4"
-                        : "md:col-span-1 lg:row-span-1 col-span-4"
+                        ? "lg:col-span-2 lg:row-span-2 col-span-4"
+                        : "lg:col-span-1 lg:row-span-1 col-span-4"
                     }
                   />
                 );

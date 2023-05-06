@@ -14,25 +14,25 @@ const Article: React.FC<IArticle> = ({
 }) => {
   return (
     <article
-      className={`${rowSpan} ${colEnd} overflow-hidden w-full text-black font-capriola flex flex-col  items-center outline outline-0.5 relative p-10`}
+      className={`${rowSpan} ${colEnd} overflow-hidden  lg:w-full text-black font-capriola flex flex-col items-center outline p-5`}
     >
       <Link href={articleSrc} target="_blank">
-        <div className="w-full h-full border-box overflow-hidden">
+        <div className="w-full h-full  overflow-hidden ">
           <Image
             src={imageScr}
             alt={"Test Image"}
             width={1000}
             height={700}
-            className="object-center"
+            className="object-center "
           />
         </div>
       </Link>
-      <div className="flex  justify-evenly items-center min-h-[20%] py-5 w-full flex-col md:flex-row lg:flex-row ">
-        <h5 className="py-1 px-1 text-black text xl:text-base lg:text-md md:text-xs md:text-left lg:text-left xl:text-left text-center md:w-[60%] lg:w-[60%] xl:w-[60%] text-clip text-left">
+      <div className="flex justify-evenly items-center min-h-[20%] p-5 w-full  flex-col md:flex-row">
+        <h5 className="p-2 text-black text xl:text-base lg:text-md md:text-xs md:text-left lg:text-left xl:text-left text-center  text-clip text-left">
           {name}
         </h5>
-        <div className="flex-col items-center">
-          <p className="xl:text-xl lg:text-base md:text-sm text-2xl p- underline text-black">
+        <div className="flex-col items-center p-2 text-center">
+          <p className="xl:text-xl lg:text-base md:text-sm text-2xl text-black">
             {specialPrice}
           </p>
           <p className="xl:text-base lg:text-sm md:text-xs line-through">
@@ -42,9 +42,9 @@ const Article: React.FC<IArticle> = ({
         <a
           href={articleSrc}
           target="_blank"
-          className="xl:sm p-2 lg:text-sm md:text-xs text-black w-32 m-5 outline outline-0.5 text-center border-1 border-black hover:bg-black hover:text-white transition-all duration-500 ease-in-out"
+          className="xl:sm p-2 lg:text-sm md:text-xs text-black lg:w-20 p-10 m-5 w-40   outline  text-center border-1 border-black hover:bg-black hover:text-white transition-all duration-500 ease-in-out"
         >
-          BUY NOW
+          {`BUY \n NOW`}
         </a>
       </div>
     </article>
