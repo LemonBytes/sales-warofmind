@@ -8,10 +8,9 @@ import Image from "next/image";
 const Footer = () => {
   const links = [
     { name: "LEGAL NOTICE", href: "/legalNotice" },
-    { name: "CONTACT US", href: "/" },
-    { name: "FAQs", href: "/" },
-    { name: "PRIVACY POLICY", href: "/" },
-    { name: "DISCLAIMER", href: "/" },
+    { name: "FAQs", href: "/faqs" },
+    { name: "PRIVACY POLICY", href: "/privacyPolicy" },
+    { name: "DISCLAIMER", href: "/disclaimer" },
   ];
   return (
     <footer className="relative bottom-0 w-screen flex md:flex-row flex-col-reverse md:h-64">

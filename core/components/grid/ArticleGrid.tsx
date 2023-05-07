@@ -15,7 +15,7 @@ const mapBackgroundColor = (brandName: string) => {
 const ArticleGrid: React.FC<IProductGrid> = ({ products }) => {
   return (
     <section>
-      {Object.keys(products).map((brandName: string, index: number) => {
+      {Object.keys(products).map((brandName: any, index: any) => {
         return (
           <>
             <section

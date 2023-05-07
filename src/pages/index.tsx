@@ -3,30 +3,16 @@ import Header from "../../core/components/warpper/header/Header";
 import ArticleGrid from "../../core/components/grid/ArticleGrid";
 import productList from "../../public/static/products/productList.json";
 import { IBrand } from "../../core/entities/brand";
-import { IArticle } from "../../core/entities/article";
 import Footer from "../../core/components/warpper/footer/Footer";
+import ProductParser from "../../core/adapters/ParseProducts";
+import Layout from "../../core/components/warpper/layout/Layout";
 
 //write a parse which takes the json and returns an array of IArticle
 //then you can use the array in the ArticleGrid component
 // how to parse a json file to a javascript object
 // https://stackoverflow.com/questions/20008134/how-to-parse-a-json-file-in-javascript
-const parse = (json: any): IBrand => {
-  const brands: IBrand = {};
-  Object.keys(json).forEach((brandName: string) => {
-    brands[brandName] = json[brandName].map((article: IArticle) => {
-      return {
-        name: article.product_name,
-        imageScr: article.product_image,
-        articleSrc: article.product_link,
-        specialPrice: article.product_special_price,
-        oldPrice: article.product_price,
-      };
-    });
-  });
-  return brands;
-};
 
-export default function Home() {
+export default function Home(props: IBrand) {
   return (
     <>
       <Head>
@@ -35,11 +21,18 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
-      <section className="block">
-        <ArticleGrid products={parse(productList)} />
-      </section>
-      <Footer />
+
+      <ArticleGrid products={props} />
     </>
   );
+}
+
+export async function getStaticProps() {
+  const productParser = new ProductParser();
+  const products = productParser.parse(productList);
+  return {
+    props: {
+      ...products,
+    },
+  };
 }
