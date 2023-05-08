@@ -7,9 +7,9 @@ import Image from "next/image";
 
 const Footer = () => {
   const links = [
-    { name: "LEGAL NOTICE", href: "/legalNotice" },
+    { name: "IMPRINT", href: "/imprint" },
     { name: "FAQs", href: "/faqs" },
-    { name: "PRIVACY POLICY", href: "/privacyPolicy" },
+    { name: "PRIVACY POLICY", href: "/privacy-policy" },
     { name: "DISCLAIMER", href: "/disclaimer" },
   ];
   return (

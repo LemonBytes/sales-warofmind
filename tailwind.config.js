@@ -1,6 +1,6 @@
 module.exports = {
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx, html}",
+    "./src/pages/**/*.{js,ts,jsx,tsx, html}",
     "./core/components/**/*.{js,ts,jsx,tsx, html}",
   ],
   theme: {
@@ -68,7 +68,7 @@ module.exports = {
   },
   mode: "jit",
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx}",
+    "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./core/components/**/*.{js,ts,jsx,tsx,}",
   ],
   /* plugins: [[require('prettier-plugin-tailwindcss')]], */
