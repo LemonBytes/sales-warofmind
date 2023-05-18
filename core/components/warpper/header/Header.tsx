@@ -6,10 +6,7 @@ import MenuButton from "./MenuButton";
 const Header = () => {
   return (
     <header className="md:h-32 lg:h-32 xl:h-32 h-20 w-screen sticky -top-1 flex items-center justify-around z-10 bg-white border-b">
-      <MenuButton />
-      <div className="border border-1 w-[45%] "></div>
       <Logo />
-      <div className="border border-1 w-[10%] m-2 "></div>
     </header>
   );
 };

@@ -1,9 +1,11 @@
+import Link from "next/link";
 import React from "react";
-import Image from "next/image";
-import logo from "../../../../public/static/images/logo.jpg";
+
 const Logo = () => {
   return (
-    <Image className="p-10" src={logo} alt={""} width={130} height={130} />
+    <Link href={"/"}>
+      <h1 className="text-4xl md:text-7xl font-naruto">WAR OF MIND</h1>
+    </Link>
   );
 };
 
