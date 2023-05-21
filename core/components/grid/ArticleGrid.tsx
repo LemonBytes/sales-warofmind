@@ -3,7 +3,7 @@ import Article from "./Article";
 import TextItem from "./TextItem";
 import { IBrand } from "../../entities/brand";
 import { IArticle } from "../../entities/article";
-
+import { brandTexts } from "./brandTexts";
 export interface IProductGrid {
   products: IBrand;
 }
@@ -12,6 +12,7 @@ const mapBackgroundColor = (brandName: string) => {
   return brandName === "venum" ? "bg-venumWhite" : "bg-white";
 };
 
+console.log(brandTexts["venum"]);
 const ArticleGrid: React.FC<IProductGrid> = ({ products }) => {
   return (
     <section>
@@ -24,13 +25,18 @@ const ArticleGrid: React.FC<IProductGrid> = ({ products }) => {
               )}`}
             >
               <h1
-                className={`col-span-4 w-full text-black md:text-5xl text-3xl font-capriola px-2 md:px-20 uppercase text-center border border-black h-40 flex items-center ${
+                className={`col-span-4 w-full text-black md:text-5xl text-3xl font-capriola px-2 md:px-20 uppercase text-center border border-black md:h-40 h-20 flex items-center ${
                   index % 2 == 0 ? "justify-start" : "justify-end"
                 }`}
               >
                 {brandName}
               </h1>
-              <TextItem colEnd="col-span-2" rowSpan="row-span-1" />
+              <TextItem
+                colEnd="col-span-2"
+                rowSpan="row-span-1"
+                smallText={brandTexts[brandName].smallText}
+                largeText={brandTexts[brandName].largeText}
+              />
               {products[brandName].map((article: IArticle, index: number) => {
                 return (
                   <Article
