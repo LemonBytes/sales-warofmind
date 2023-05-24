@@ -1,11 +1,10 @@
 import Head from "next/head";
 import Header from "../../core/components/warpper/header/Header";
-import ArticleGrid from "../../core/components/grid/ArticleGrid";
+import ProductGrid from "../../core/components/grid/ProductGrid";
 import productList from "../../public/static/products/productList.json";
 import { IBrand } from "../../core/entities/brand";
 import Footer from "../../core/components/warpper/footer/Footer";
 import ProductParser from "../../core/adapters/ParseProducts";
-import Layout from "../../core/components/warpper/layout/Layout";
 
 //write a parse which takes the json and returns an array of IArticle
 //then you can use the array in the ArticleGrid component
@@ -22,7 +21,7 @@ export default function Home(props: IBrand) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <ArticleGrid products={props} />
+      <ProductGrid products={props} />
     </>
   );
 }

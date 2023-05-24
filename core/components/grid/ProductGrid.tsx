@@ -1,6 +1,6 @@
 import React from "react";
-import Article from "./Article";
-import TextItem from "./TextItem";
+import Article from "../article/Article";
+import TextItem from "../article/TextItem";
 import { IBrand } from "../../entities/brand";
 import { IArticle } from "../../entities/article";
 import { brandTexts } from "./brandTexts";
@@ -9,11 +9,16 @@ export interface IProductGrid {
 }
 
 const mapBackgroundColor = (brandName: string) => {
-  return brandName === "venum" ? "bg-venumWhite" : "bg-white";
+  if (brandName === "venum") {
+    return "bg-venumWhite";
+  }
+  if (brandName === "adidas") {
+    return "bg-adidasWhite";
+  }
+  return "bg-white";
 };
 
-console.log(brandTexts["venum"]);
-const ArticleGrid: React.FC<IProductGrid> = ({ products }) => {
+const ProductGrid: React.FC<IProductGrid> = ({ products }) => {
   return (
     <section>
       {Object.keys(products).map((brandName: any, index: any) => {
@@ -42,7 +47,7 @@ const ArticleGrid: React.FC<IProductGrid> = ({ products }) => {
                   <Article
                     key={index}
                     name={article.name}
-                    imageScr={article.imageScr}
+                    imageSources={article.imageSources}
                     articleSrc={article.articleSrc}
                     specialPrice={article.specialPrice}
                     oldPrice={article.oldPrice}
@@ -62,4 +67,4 @@ const ArticleGrid: React.FC<IProductGrid> = ({ products }) => {
   );
 };
 
-export default ArticleGrid;
+export default ProductGrid;

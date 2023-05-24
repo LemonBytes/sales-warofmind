@@ -13,15 +13,29 @@ export default class ProductParser implements IParseProducts {
       brands[brandName] = json[brandName].map(
         (article: IJsonArticle): IArticle => {
           return {
-            name: article.product_name,
-            imageScr: article.product_image,
+            name: this.checkName(article.product_name),
+            imageSources: this.checkImages(article.product_images),
             articleSrc: article.product_link,
-            specialPrice: article.product_special_price,
-            oldPrice: article.product_price,
+            specialPrice: article.product_special_price.trim(),
+            oldPrice: article.product_price.trim(),
           };
         }
       );
     });
     return brands;
+  }
+
+  checkName(name: string | string[]): string {
+    if (typeof name == "string") {
+      return name.trim();
+    }
+    return name[0].trim();
+  }
+
+  checkImages(images: string[] | string[][]): string[] {
+    if (Array.isArray(images[0])) {
+      return images[0] as string[]; // Explicitly cast to string[]
+    }
+    return images as string[]; // Explicitly cast to string[]
   }
 }

@@ -12,6 +12,7 @@ module.exports = {
     },
     colors: {
       venumWhite: `rgb(${217}, ${217}, ${217}, ${0.6})`,
+      adidasWhite: `rgb(${217}, ${217}, ${217}, ${0.5})`,
       white: `#ffffff`,
       black: `#404040`,
       menuBlack: `rgb(${0}, ${0}, ${0}, ${0.8})`,
