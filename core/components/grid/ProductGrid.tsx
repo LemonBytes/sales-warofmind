@@ -29,16 +29,16 @@ const ProductGrid: React.FC<IProductGrid> = ({ products }) => {
                 brandName
               )}`}
             >
-              <h1
+              {/*  <h1
                 className={`col-span-4 w-full text-black md:text-5xl text-3xl font-capriola px-2 md:px-20 uppercase text-center border border-black md:h-40 h-20 flex items-center ${
                   index % 2 == 0 ? "justify-start" : "justify-end"
                 }`}
               >
                 {brandName}
-              </h1>
+              </h1> */}
               <TextItem
                 colEnd="col-span-2"
-                rowSpan="row-span-1"
+                rowSpan="row-span-2"
                 smallText={brandTexts[brandName].smallText}
                 largeText={brandTexts[brandName].largeText}
               />
@@ -52,9 +52,9 @@ const ProductGrid: React.FC<IProductGrid> = ({ products }) => {
                     specialPrice={article.specialPrice}
                     oldPrice={article.oldPrice}
                     colEnd={
-                      index % 5 == 0
-                        ? "lg:col-span-2 lg:row-span-2 col-span-4"
-                        : "lg:col-span-1 lg:row-span-1 col-span-4"
+                      index % 3 == 0
+                        ? "lg:col-span-2 lg:row-span-2 col-span-2"
+                        : "lg:col-span-1 lg:row-span-1 col-span-2"
                     }
                   />
                 );

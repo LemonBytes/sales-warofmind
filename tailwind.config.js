@@ -55,16 +55,6 @@ module.exports = {
           acc[val] = `${val / 10}rem`;
           return acc;
         }, {}),
-      backgroundImage: {
-        brush: "url('../public/static/assets/images/brush.webp')",
-      },
-      backgroundPosition: {
-        topBar: "-150px",
-        bottBar: "-70px",
-      },
-      screens: {
-        smallPhone: { raw: "(max-height: 670px)" },
-      },
     },
   },
   mode: "jit",

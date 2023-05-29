@@ -17,7 +17,7 @@ const Article: React.FC<IArticle> = ({
     >
       <ImageSlide imageSources={imageSources} name={name} />
       <div className="flex justify-evenly items-center min-h-[20%]  w-full  flex-col md:flex-row">
-        <h5 className="p-2 text-black text xl:text-base lg:text-md md:text-base md:text-left lg:text-left xl:text-left text-center  text-clip text-left">
+        <h5 className="p-2 text-black text xl:text-base  md:text-sm md:text-left lg:text-left xl:text-left text-center  text-clip text-left">
           {name}
         </h5>
         <div className="flex-col items-center p-3 text-center">

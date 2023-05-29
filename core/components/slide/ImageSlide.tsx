@@ -8,41 +8,62 @@ interface ISlide {
 
 export const ImageSlide: React.FC<ISlide> = ({ imageSources, name }) => {
   const [activeImage, setActiveImage] = useState<number>(0);
+  const [touchStartX, setTouchStartX] = useState<number | null>(null);
+
+  const handleTouchStart = (event: React.TouchEvent<HTMLDivElement>) => {
+    setTouchStartX(event.touches[0].clientX);
+  };
+
+  const handleImageChange = (index: number) => {
+    setActiveImage(index);
+  };
+
+  const handleTouchEnd = (event: React.TouchEvent<HTMLDivElement>) => {
+    if (touchStartX !== null) {
+      const touchEndX = event.changedTouches[0].clientX;
+      const touchDifference = touchEndX - touchStartX;
+
+      if (touchDifference > 50 && activeImage > 0) {
+        setActiveImage(activeImage - 1); // Swipe right
+      } else if (
+        touchDifference < -50 &&
+        activeImage < imageSources.length - 1
+      ) {
+        setActiveImage(activeImage + 1); // Swipe left
+      }
+    }
+
+    setTouchStartX(null);
+  };
+
   return (
-    <div className="w-full max-h-[80%] max-w-[600px] flex-col flex h-auto p-5">
-      <div>
-        {/* {imageSources.map((imageSource: string, index: number) => {
-          return (
-            <div key={index} className="border w-screen">
-              <Image
-                src={imageSource}
-                alt={"article of " + name}
-                width={800}
-                height={800}
-                className="object-center object-cover"
-              />
-            </div>
-          );
-        })} */}
-        <Image
-          src={imageSources[0]}
-          alt={"article of " + name}
-          width={600}
-          height={600}
-          className="object-center object-cover"
-        />
-      </div>
-      <div className="flex w-full items-center justify-center py-10">
-        {imageSources.map((image: string, index: number) => {
-          return activeImage === imageSources.indexOf(image) ? (
+    <div
+      className="w-full max-h-full max-w-[600px] flex-col flex h-auto p-5 mb-10"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
+      <div className="relative">
+        <div style={{ paddingBottom: "100%" }}>
+          <Image
+            src={imageSources[activeImage]}
+            alt={"article of " + name}
+            fill
+            sizes="100vw"
+          />
+        </div>
+        <div className="absolute -bottom-10 w-full flex justify-center py-3">
+          {imageSources.map((image: string, index: number) => (
             <div
               key={index}
-              className="w-3 m-1 h-3 border border-white bg-black"
+              className={`w-3 m-1 h-3 rounded-full cursor-pointer  ${
+                activeImage === index
+                  ? "bg-black border-black"
+                  : "border border-black"
+              }`}
+              onClick={() => handleImageChange(index)}
             ></div>
-          ) : (
-            <div key={index} className="w-3 m-1 h-3 border border-black"></div>
-          );
-        })}
+          ))}
+        </div>
       </div>
     </div>
   );

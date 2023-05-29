@@ -19,7 +19,7 @@ const TextItem: React.FC<ITextItem> = ({
       className={`${rowSpan} ${colEnd} h-full text-black font-capriola  outline outline-blurrRed`}
     >
       <div className="w-full h-[50%]">
-        <p className="text-left lg:text-5xl  text-3xl md:p-10 p-6 leading-tight uppercase">
+        <p className="text-left lg:text-6xl text-3xl md:p-10 p-6 leading-tight uppercase">
           {largeText}
         </p>
       </div>
