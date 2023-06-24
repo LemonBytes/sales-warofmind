@@ -14,7 +14,7 @@ export default class ProductParser implements IParseProducts {
         (article: IJsonArticle): IArticle => {
           return {
             name: this.checkName(article.product_name),
-            imageSources: this.checkImages(article.product_images),
+            imageSources: article.product_images,
             articleSrc: article.product_link,
             specialPrice: article.product_special_price.trim(),
             oldPrice: article.product_price.trim(),
@@ -35,7 +35,9 @@ export default class ProductParser implements IParseProducts {
   checkImages(images: string[] | string[][]): string[] {
     if (Array.isArray(images[0])) {
       return images[0] as string[]; // Explicitly cast to string[]
+    } else {
+      return images as string[];
     }
-    return images as string[]; // Explicitly cast to string[]
+    // Explicitly cast to string[]
   }
 }
