@@ -38,7 +38,7 @@ export const ImageSlide: React.FC<ISlide> = ({ imageSources, name }) => {
 
   return (
     <div
-      className="w-full max-h-full max-w-[600px] flex-col flex h-auto p-5 mb-10"
+      className="w-full max-h-full max-w-[600px] flex-col flex h-auto p-5 mb-10 "
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >

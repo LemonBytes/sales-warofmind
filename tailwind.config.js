@@ -62,5 +62,4 @@ module.exports = {
     "./src/pages/**/*.{js,ts,jsx,tsx}",
     "./core/components/**/*.{js,ts,jsx,tsx,}",
   ],
-  /* plugins: [[require('prettier-plugin-tailwindcss')]], */
 };
